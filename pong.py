@@ -30,24 +30,33 @@ boll=Turtle()
 #bollen
 boll.color("white")
 boll.shape("circle")
-def flyta_boll():
-    boll_x=boll.xcor()+10
-    boll_y=boll.ycor()+10
-    boll.goto(boll_x,boll_y)
+boll.penup()
+boll.goto(0,0)
 
 
 
+def figur1_up():
+    if figur1.ycor() < 250:
+        figur1.sety(figur1.ycor() + 20)
 
-def flyta_upp1():
-    ny_plats=figur1.ycor()+20
-    figur1.goto(figur1.xcor(), ny_plats)
+def figur1_down():
+    if figur1.ycor() > -250:
+        figur1.sety(figur1.ycor() - 20)
 
-screen.onkey(flyta_upp1, "Up")
+def figur2_up():
+    if figur2.ycor() < 250:
+        figur2.sety(figur2.ycor() + 20)
+
+def figur2_down():
+    if figur2.ycor() > -250:
+        figur2.sety(figur2.ycor() - 20)
+
 screen.listen()
+screen.onkeypress(figur1_up, "w")       
+screen.onkeypress(figur1_down, "s")    
+screen.onkeypress(figur2_up, "Up")      
+screen.onkeypress(figur2_down, "Down")
 
-game = True
-while game == True:
-    flyta_boll()
 
 def flyta_upp1():
     ny_plats=figur1.ycor()+20
@@ -57,13 +66,13 @@ def flyta_ner1():
     ny_plats=figur1.ycor()-20
     figur1.goto(figur1.xcor(), ny_plats)
 
-screen.onkey(flyta_upp1, "Up")
-screen.onkey(flyta_ner1, "Down")
+# screen.onkey(flyta_upp1, "Up")
+# screen.onkey(flyta_ner1, "Down")
 screen.listen()
 
-game = True
-while game == True:
-    flyta_boll()
+# game = True
+# while game == True:
+#     flyta_boll()
 
   
 
